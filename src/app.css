@@ -45,9 +45,16 @@ body {
 }
 
 h1 {
-  font-size: 6em;
+  font-size: 6rem;
+  line-height: 1em;
   font-weight: 700;
-  margin: 30px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 3em;
+  line-height: 1em;
+  text-align: start;
 }
 
 #app {

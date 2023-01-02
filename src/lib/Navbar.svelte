@@ -28,7 +28,7 @@
  }
  
  nav#filters {
-   height: 5vh;
+   height: 7.5vh;
    position: absolute;
    bottom: 0;
    grid-area: filters;
@@ -36,5 +36,8 @@
    background-color: white;
    width: 100%;
    z-index: 1;
+   padding: 10px;
+   font-size: 1.22rem;
+   font-weight: 2000;
  }
 </style>

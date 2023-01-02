@@ -8,7 +8,7 @@
 </script>
 
 <div in:fade={{delay: 50}} out:fade id="detail">
-  <h1>{tea.name}</h1>
+  <h2>{tea.name}</h2>
   <TeaPrice {tea}/>
   <p>
   {@html tea.description}
@@ -23,15 +23,5 @@
 <style> 
  div#detail {
    grid-area: detail;
- }
-
- img#bag {
-   float: right;
-   width: 20%;
-   margin: 2rem;
- }
-
- h1 {
-   font-size: 3em;
  }
 </style>

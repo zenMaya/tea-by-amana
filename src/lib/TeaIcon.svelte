@@ -15,32 +15,33 @@
   };
 </script>
 
-<img alt={tea.name} class:highlighted class:selected class="icon" src={tea.small_image} on:keypress={switch_tea} on:click={switch_tea}/>
+<div class="icon" class:highlighted class:selected on:keypress={switch_tea} on:click={switch_tea} style:--src={`url(\"${tea.small_image}\")`}/>
+<!-- <img alt={tea.name} class:highlighted class:selected class="icon" src={tea.small_image} on:keypress={switch_tea} on:click={switch_tea}/> -->
 
 <style>
- img.icon {
-   background-size: 100% 100%;
-   cursor: pointer;
-   transition: 0.25s;
- }
- img.icon:hover {
+  .icon:hover {
    box-shadow: var(--hover-shadow);
  }
- img.icon.selected {
+  .icon.selected {
    box-shadow: var(--select-shadow);
  }
- img.icon.highlighted {
+ .icon.highlighted {
    filter: grayscale(0%);
  }
- img.icon {
+ .icon {
+   cursor: pointer;
    width: 100%;
    filter: grayscale(100%);
    aspect-ratio: 768/1355;
    flex-shrink: 1;
    transition: ease-in-out 0.2s;
+   background-image: var(--src);
+   background-size: contain;
+   place-items: center;
  }
 </style>
 
 <!--
     max-width: 150px;
+    filter: grayscale(0%);
     -->

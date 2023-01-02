@@ -44,28 +44,7 @@
       <div id="welcome">
         <!--Myriad pro Bold wide 75pt -->
         <h1 id="name">TEA BY AMANA</h1>
-        <p>
-          Adresa: <br/>
-          U pastoušky 159/1 <br/>
-          158 00 Praha 5
-        </p>
-        <p>
-          Telefon:  251 612 100
-        </p>
-        <p>
-          Otevírací doba: <br/>
-          PO - PÁ: 10.00 - 17.00
-        </p>
-        <p>
-          Mobil:  603 544 749 (GSM)
-        </p>
-        <p>
-          Osobní návštěva možná <br/>
-          pouze po předchozí domluvě.
-        </p>
-        <p>
-          Mail:  <a href="mailto:info@caj.cz">info@caj.cz</a>
-        </p>
+        <a href="https://www.caj.cz/index.php?page=internetovy-obchod" id="contact">kontakt</a>
       </div>
       <div class="icon-view">
         {#each teas.filter((_, index) => index >= (teas.length / 2)) as tea}
@@ -98,7 +77,7 @@
       flex-shrink: 0;
       height: 100vh;
       width: 100vw;
-      padding-bottom: 5vh;
+      padding-bottom: 7.5vh;
       scroll-snap-align: start;
     }
 
@@ -108,25 +87,15 @@
     }
 
     div#welcome {
+      display: flex;
       flex-grow: 1;
       align-self: center;
       justify-self: center;
       align-content: center;
       justify-content: center;
       align-items: center;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 140px repeat(3, 50px);
-      gap: 10px;
-      grid-template-areas:
-        "name name"
-        "physical remote"
-      ;
-    }
-
-    div#welcome > p {
-      text-align: center;
-      margin: 5px;
+      position: relative;
+      width: 100%;
     }
     
     div.icon-view {
@@ -139,6 +108,15 @@
       transform: scaleX(125%);
       font-family: myriad-pro;
       grid-area: name;
+      font-size: 17.5vh;
+    }
+
+    a#contact {
+      position: absolute;
+      text-decoration: none;
+      color: gray;
+      right: 40px;
+      bottom: 30px;
     }
   </style>
 
