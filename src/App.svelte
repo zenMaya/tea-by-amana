@@ -7,9 +7,11 @@
   
   import TeaIcon from './lib/TeaIcon.svelte';
   import TeaView from './lib/TeaView.svelte';
-    import Navbar from './lib/Navbar.svelte';
+  import Navbar from './lib/Navbar.svelte';
+  import Overlay from './lib/Overlay.svelte';
 
   let have_interacted = false;
+  let overlay_enabled = false;
 
   let auto_cycle_index = -1;
   const cycle = () => {
@@ -34,7 +36,9 @@
 
 <svelte:window on:click={() => have_interacted = true} />
 <Navbar/>
-  <main bind:this={$main_element} id="main-view" on:scroll={recalculate_filter}>
+  <main bind:this={$main_element} id="main-view"
+        on:scroll={recalculate_filter}>
+    <Overlay bind:enabled={overlay_enabled}/>
     <page id={TeaType.All}>
       <div class="icon-view">
         {#each teas.filter((_, index) => index < (teas.length / 2)) as tea}
@@ -43,7 +47,7 @@
       </div>
       <div id="welcome">
         <!--Myriad pro Bold wide 75pt -->
-        <h1 id="name">TEA BY AMANA</h1>
+        <a id="name" on:click={() => overlay_enabled = true}>TEA BY AMANA</a>
         <a href="https://www.caj.cz/index.php?page=internetovy-obchod" id="contact">kontakt</a>
       </div>
       <div class="icon-view">
@@ -104,11 +108,12 @@
       flex-shrink: 0;
     }
 
-    h1#name {
+    a#name {
       transform: scaleX(125%);
       font-family: myriad-pro;
       grid-area: name;
       font-size: 17.5vh;
+      cursor: pointer;
     }
 
     a#contact {

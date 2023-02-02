@@ -57,6 +57,19 @@ h2 {
   text-align: start;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
 #app {
   margin: 0;
   padding: 0;

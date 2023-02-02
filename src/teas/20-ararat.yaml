@@ -2,7 +2,7 @@ name: Fruit Tea ARARAT
 tea_type: fruit
 bio: true
 price_bio: 135
-small_image: "teas/Ovoc. Ararat.jpg"
+small_image: "/teas/Ovoc. Ararat.jpg"
 description: >
     Obzvláště působivý pohled na tuto nejvyšší tureckou horu nabízí 
     arménské hlavní město Jerevan. Tento vulkán, se stále zamrzlým dvoj- 
